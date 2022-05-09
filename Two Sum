@@ -43,16 +43,12 @@ Follow-up: Can you come up with an algorithm that is less than O(n2) time comple
  */
 
 var twoSum = function(nums, target) {
-    // iterate through the elements in the array called nums
-    // add two unique elements (can't be the same element) together and see if they equal target
-    // do element position 0 and 1, 0 and 2, 0 and 3, etc.
-    // there is only one answer so once you find the answer, return out of funcion twoSum
     
     for (let x = 0; x < nums.length; x = x + 1) {
         
-        for (let y = 0; y < nums.length; y = y +1) {
+        for (let y = x + 1; y < nums.length; y = y +1) {
             
-            if (nums[x] === target - nums[y]) {
+            if (nums[x] + nums[y] === target) {
                 let output = [];
                 output.push(x, y);
                 return output;
